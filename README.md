@@ -1,5 +1,6 @@
 programa
 {
+	
 	inclua biblioteca Util
 	
 	funcao inicio()
