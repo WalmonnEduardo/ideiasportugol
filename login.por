@@ -2,13 +2,13 @@ programa
 {
 	
 	inclua biblioteca Util
-
-funcao inicio()
-{
 	cadeia usuario //usuário que a pessoa pode escolher
 	cadeia senha //senha que a pessoa pode escolher
 	cadeia entrada_usuario  //usuário que está tentando login
 	cadeia entrada_senha = ""//senha que está tentando login
+
+funcao inicio()
+{
 	escreva("Digite um usuário: ")
 	leia(usuario)
 	escreva("Digite uma senha: ")
