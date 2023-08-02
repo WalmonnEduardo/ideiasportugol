@@ -65,12 +65,17 @@ programa
 				escreva("Escolha a posição conta que deseja alterar: ")
 				leia(x)
 				x--
+				escreva("Digite a conta: ")
+				leia(contas[x])
+				limpa()
 				pare
 				caso 2:
 				escreva("Qual é a posicão você deja editar? ")
 				leia(x)
 				x--
 				limpa()
+				escreva("Digite o valor:")
+				leia(valor[x])
 				pare
 				caso contrario:
 				limpa()
