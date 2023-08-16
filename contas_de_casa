@@ -1,0 +1,170 @@
+programa
+{
+	inclua biblioteca Util --> u
+/*Memória de contas*/		cadeia contas[100] = {"","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",""}
+/*Posição*/				inteiro x = 0
+/*Posição*/				inteiro j = 0
+/*Para número repetições*/	inteiro vezes = u.numero_elementos(contas)-1
+/*Caso queira continuar*/	logico continuar = verdadeiro
+/*Escolher algo*/			inteiro opcao
+/*Escolher algo*/			inteiro opcao2
+/*Guardar quanto recebeu*/	real salario
+/*Posição*/				inteiro y
+/*Valor das contas*/		real valor[100] = {0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}
+	funcao inicio()
+	{
+		lista()		/*Faz a listagem de contas*/
+		valores()		/*Adiciona o valor das contas*/
+		soma()		/*Soma todo o valor a pagar*/
+		pagamento()	/*Se dá para pagar ou não*/
+	}
+	funcao lista()/*Incia com x = 0 e vai conferir. Se espaço é igual a vazio então guarde a informação ali*/
+	{
+		x = 0
+		faca
+		{
+			se(contas[x] == "")
+			{
+				escreva("Digite a conta: ") 
+				leia(contas[x])
+				limpa()
+				conferir()	/*Faz uma lista das contas e pergunta ao usuário se ele quer (continuar, editar, excluir ou parar
+				de anotar)*/
+			}
+			x++
+		}enquanto(continuar == verdadeiro)
+	}
+	funcao conferir()
+	{
+		listacontas()
+		escreva("***************************\n")
+		escreva("* 1 --> Continuar         *\n")/*Continua o que está fazendo*/
+		escreva("***************************\n")
+		escreva("* 2 --> Editar            *\n")/*Edita conta ou valor*/
+		escreva("***************************\n")
+		escreva("* 3 --> Excluir conta     *\n")/*Exclui conta*/
+		escreva("***************************\n")
+		escreva("* 4 --> Fim do processo   *\n")/*Passa para um outro processo*/
+		escreva("***************************\n\n")
+		escreva("Escolha: ")
+		leia(opcao)
+		escolha(opcao)
+		{
+			caso 1:
+			limpa()
+			pare
+			caso 2:
+			limpa()
+			
+			escreva("***************\n")
+			escreva("* 1 --> Conta *\n")
+			escreva("***************\n")
+			escreva("* 2 --> Valor *\n")
+			escreva("***************\n\n")
+			escreva("Escolha: ")
+			leia(opcao2)
+			escolha(opcao2)
+			{
+				caso 1:
+				escreva("Escolha a posição conta que deseja alterar: ")
+				leia(x)
+				x--
+				escreva("Digite a conta: ")
+				leia(contas[x])
+				limpa()
+				pare
+				caso 2:
+				escreva("Qual é a posicão você deja editar? ")
+				leia(x)
+				x--
+				limpa()
+				escreva("Digite o valor:")
+				leia(valor[x])
+				pare
+				caso contrario:
+				limpa()
+				conferir()
+			}
+			pare
+			caso 3:
+			escreva("Qual você deseja excluir? ")
+			leia(j)
+			j-- /*Isso porque usuários normais vão começar a partir do 1 e não do 0. Logo o nosso 0 é o 1 deles*/
+			faca
+			{
+				contas[j] = contas[j+1]/*Eu quero que ele receba o que está na frente porque caso depois dele exlcuir
+				ele encerrar o processo vai ficar um espaço vazio*/
+
+				u.aguarde(50)
+				
+				j++
+			}enquanto(j < vezes)
+
+			contas[vezes] = ""
+			limpa()
+			
+			conferir()
+			limpa()
+			pare
+			caso 4:
+			limpa()
+			continuar = falso
+			pare
+			caso contrario:
+			limpa()
+			conferir()
+			
+		}
+	}
+	funcao listacontas()
+	{
+		inteiro w = 0
+		enquanto(w <= vezes)
+		{
+			se(contas[w] != ""){
+				escreva("=======================================================================================================================================================================\n")
+				escreva(w+1,":",contas[w]," --> ",valor[w],"\n")
+				escreva("=======================================================================================================================================================================\n")
+				w++
+			} senao {
+				w++
+			}
+
+		}	
+	}
+	funcao valores()
+	{
+		y = 0
+		para(y = 0; y<=x ; y++)
+		{
+			se(valor[y] == 0.0)
+			{
+				escreva(contas[y],": ") 
+				leia(valor[y])
+				limpa()
+				conferir()
+			}
+		}
+	}
+	funcao soma()
+	{
+		x = 0
+		para(y = x ; valor[y] != 0.0 ; y++)
+		{
+			valor[x] += valor[y]
+		}
+	}
+	funcao pagamento()
+	{
+		escreva("Qual é o seu salário? ")
+		leia(salario)
+		se(salario >= valor[0])
+		{
+			escreva("Dá para pagar. Vai sobrar ", salario-valor[0]," reais.")
+		}
+		senao
+		{
+			escreva("Não dá para pagar tudo. Vai faltar ",valor[0]-salario," reais.")
+		}
+	}
+}
