@@ -1,45 +1,34 @@
-programa 
+programa
 {
-	
 	inclua biblioteca Util
-	cadeia usuario //usuário que a pessoa pode escolher
-	cadeia senha //senha que a pessoa pode escolher
-	cadeia entrada_usuario  //usuário que está tentando login
-	cadeia entrada_senha = ""//senha que está tentando login
-
-funcao inicio()
-{
-	escreva("Digite um usuário: ")
-	leia(usuario)
-	escreva("Digite uma senha: ")
-	leia(senha)
 	
-	limpa()
-
-	faca
+cadeia login[4]
+	funcao inicio()
 	{
-
-	escreva("Digite seu usuário: ")
-	leia(entrada_usuario)
-	escreva("Digite sua senha: ")
-	leia(entrada_senha)
-
-	se(usuario != entrada_usuario ou senha != entrada_senha)
-	{
+		
+escreva("Crie um nome: ")
+		leia(login[0])
+		escreva("Crie uma senha: ")
+		leia(login[1])
 		limpa()
-		escreva("Acesso negado.\nTente novamente.")
-		Util.aguarde(3000)
-		limpa()
-	}	
-	}enquanto(usuario != entrada_usuario ou senha != entrada_senha)
-	
-	
-	
-	limpa()
-	
-	escreva("Acesso altorizado.\nBem vindo ",usuario,"!")
-	
+		faca
+		{
+			escreva("Digite seu usuário: ")
+			leia(login[2])
+			escreva("Digite sua senha: ")
+			leia(login[3])
+			se(login[0] != login[2] ou login[1] != login[3])
+			{
+				limpa()
+				escreva("Usuário ou senha incorreta.\nTente novamente.")
+				Util.aguarde(3000)
+				limpa()
+			}
+			senao
+			{
+				limpa()
+				escreva("Acesso autorizado!")
+			}
+		}enquanto(login[0] != login[2] ou login[1] != login[3])
 	}
-	
-	
 }
