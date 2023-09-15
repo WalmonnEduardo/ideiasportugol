@@ -1,10 +1,11 @@
 programa
 {
+	inclua biblioteca Texto --> tx
 	inclua biblioteca Arquivos --> arq
 	inclua biblioteca Util --> u
 	inclua biblioteca Calendario --> cal
-	cadeia presenca[] = {"Aline Helena 1°TDS","Ana Beatriz de Souza Oliveira 1°MA","Anna Luiza Grumman 1°MA","Anthony Pablo Arevalos 1°MA","Arthur  Siqueira Ribeiro Fonseca 3°MA","Camily Dias Monteiro da Silva 1°MA","Camily Vitória dos Santos Guillen 1°MA","Eduarda Putton 1°MA","Eduardo Enrico Machado Fagundes do Santos1°MA","Eduardo Henrique Voches dos Santos 1°MA","Eduardo Turcatto 1°MA","Gabriela Yoanna Revardeau Watchel Pereira 1°MA","Guilherme Gusmões Silva 1°MA","Gustavo Theodoro 1°MA","Heloisa Tonin de Lima 1°TDS","Isabelle de Lima Rodrigues 1°MA","Júlia delfino Costa 1°MA","Kauã Enrique 1°MA","Larissa Alves de Souza Schmidt 1°MA","Maria Clara Proensa de Andrade 1°MA","Matheus Machado Preetes 1°MA","Natalia da Silva Salinas 1°MA","Vitória Serafini dos Santos 1°MA","Yuri da Silva Barth 1°MA","Amanda Izabele dos Santos 1°MA","Evillyn Santos 1°TDS","Isabela Naomi Silvero 1°MA","Walmonn Eduardo Barbosa Ramalho da Silva 1°TDS"}
-	cadeia f[] = {"","","","","","","","","","","","","","","","","","","","","","","","","","","",""}
+	cadeia presenca[] = {"Aluno 1","Aluno 2","Aluno 3","Aluno 4","Aluno 5","Aluno 6","Aluno 7","Aluno 8","Aluno 9","Aluno 10"}
+	cadeia f[] = {"","","","","","","","","","",""}
 	inteiro totalp = 0
 	inteiro totalf = 0
 	inteiro  i[2] = {0,0}
@@ -19,7 +20,7 @@ programa
 		faca
 		{
 			chamada()
-		}enquanto(f[0] != "s" e f[0] != "f" ou f[1] != "s" e f[1] != "f" ou f[2] != "s" e f[2] != "f" ou f[3] != "s" e f[3] != "f" ou f[4] != "s" e f[4] != "f" ou f[5] != "s" e f[5] != "f" ou f[6] != "s" e f[6] != "f" ou f[7] != "s" e f[7] != "f" ou f[8] != "s" e f[8] != "f" ou f[9] != "s" e f[9] != "f" ou f[10] != "s" e f[10] != "f" ou f[11] != "s" e f[11] != "f" ou f[12] != "s" e f[12] != "f" ou f[13] != "s" e f[13] != "f" ou f[14] != "s" e f[14] != "f" ou f[15] != "s" e f[15] != "f" ou f[16] != "s" e f[16] != "f" ou f[17] != "s" e f[17] != "f" ou f[18] != "s" e f[18] != "f" ou f[19] != "s" e f[19] != "f" ou f[20] != "s" e f[20] != "f" ou f[21] != "s" e f[21] != "f" ou f[22] != "s" e f[22] != "f" ou f[23] != "s" e f[23] != "f" ou f[24] != "s" e f[24] != "f" ou f[25] != "s" e f[25] != "f" ou f[26] != "s" e f[26] != "f" ou  f[27] != "s" e f[27] != "f")	
+		}enquanto(f[0] != "s" e f[0] != "f" ou f[1] != "s" e f[1] != "f" ou f[2] != "s" e f[2] != "f" ou f[3] != "s" e f[3] != "f" ou f[4] != "s" e f[4] != "f" ou f[5] != "s" e f[5] != "f" ou f[6] != "s" e f[6] != "f" ou f[7] != "s" e f[7] != "f" ou f[8] != "s" e f[8] != "f" ou f[9] != "s" e f[9] != "f")	
 		final()
 	}
 	funcao final()	
@@ -35,7 +36,7 @@ programa
 			caso contrario:semana = "Sábado" pare
 			
 		}
-		inteiro endereco = arq.abrir_arquivo("./chamada"+" "+semana+" "+dia+" "+mes+" "+ano+".txt",arq.MODO_ESCRITA)
+		inteiro endereco = arq.abrir_arquivo("./ChamadaGitHub"+" "+semana+" "+dia+" "+mes+" "+ano+".txt",arq.MODO_ESCRITA)
 		i[0] = 0
 		enquanto(i[1]< todos)
 		{
